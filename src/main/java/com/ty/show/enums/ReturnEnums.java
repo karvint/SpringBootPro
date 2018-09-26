@@ -11,6 +11,7 @@ public enum ReturnEnums {
     MENU_NOT_FOUND(100001,"菜单未找到"),
     LOGIN_ERROR(100002,"JWT校验失败"),
     LOGIN_INFO_ERROR(100003,"用户名密码信息错误"),
+    SQL_RUN_ERROR(100004,"SQL执行错误"),
     ;
     private Integer code;
     private String msg;
