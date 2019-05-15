@@ -1,28 +1,14 @@
 spring:
   datasource:
-      api:
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.zaxxer.hikari.HikariDataSource
-        jdbc-url: jdbc:mysql://192.168.114.63:3306/base?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true
-        username: root
-        password: 123456
-      base:
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.zaxxer.hikari.HikariDataSource
-        jdbc-url: jdbc:mysql://192.168.114.63:3306/base?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true
-        username: root
-        password: 123456
-
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/db_netqiuzhi?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true&characterEncoding=UTF-8
+      username: root
+      password: 123456
 server:
-  port: 8085
+  port: 8086
   servlet:
-    context-path: /scheduler
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
+    context-path: /
 management:
   endpoints:
     enabled-by-default: true
@@ -32,9 +18,6 @@ management:
   endpoint:
     health:
       show-details: always
-##jwt配置
-audience:
-  clientId: 098f6bcd4621d373cade4e832627b4f6
-  base64Secret: MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
-  name: restapiuser
-  expiresSecond: 172800
+logging:
+  level:
+    com.vasp.cloud.security.admin.mapper: DEBUG

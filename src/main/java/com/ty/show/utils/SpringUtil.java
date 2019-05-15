@@ -47,4 +47,11 @@ public class SpringUtil implements ApplicationContextAware {
     public static <T> T getBean(Class<T> clazz){
         return getApplicationContext().getBean(clazz);
     }
+
+
+    // 获取当前环境参数  exp: dev,prod,test
+    public static String getActiveProfile() {
+        String [] profiles = applicationContext.getEnvironment().getActiveProfiles();
+        return profiles[0];
+    }
 }

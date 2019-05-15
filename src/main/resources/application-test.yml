@@ -1,34 +1,14 @@
 spring:
   datasource:
-      api:
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.zaxxer.hikari.HikariDataSource
-        jdbc-url: jdbc:mysql://localhost:3306/base?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true
-        username: root
-        password: 875648435
-      base:
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.zaxxer.hikari.HikariDataSource
-        jdbc-url: jdbc:mysql://localhost:3306/base?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true
-        username: root
-        password: 875648435
-
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/db_netqiuzhi?useUnicode=true&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=true
+      username: root
+      password: 123456
 server:
-  port: 8283
+  port: 8085
   servlet:
-      context-path: /scheduler
-thirdpartyapi:
-  wxb:
-    client_id: ANJIA_WATCH
-    client_secret: c123af6e331cf61c0324cd43cbc2135b
-    grant_type: client_credentials
-    access_token_url: http://open.umeox.com:8080/api/v1/oauth2/accessToken
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
+    context-path: /
 management:
   endpoints:
     enabled-by-default: true
